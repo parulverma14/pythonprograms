@@ -1,0 +1,56 @@
+class Library:
+    no_of_books=0
+    def __init__(self,list_of_books,lib_name):
+        self.books=list_of_books
+        self.libname=lib_name
+    def dict(self):
+        d = {}
+        for dic in self.books:
+            d.update({dic: "Not issued"})
+        print(d.items())
+    def display(self):
+        d = {}
+        for dic in self.books:
+            d.update({dic: "Not issued"})
+        #print(d.items())
+        x=0
+        while x<=10:
+            print("Press : d : Display list of books, r : Return book , a : Add a book, l : lend a book  OR Choose 'D' to Display list of books")
+            option=input()
+            x=x+1
+            if option == "d":
+                print("LIST OF BOOKS")
+                for i in self.books:
+                    print(i)
+            elif option=="a":
+                print("ADD NAME OF BOOK")
+                added_book=self.books.append(input())
+                #dict()
+                for dic in self.books:
+                    d.update({dic: "Not issued"})
+            elif option=="r":
+                print("RETURN BOOK")
+                dict()
+                #self.books.append(input())
+                #d = {}
+                #for dic in self.books:
+                d.update({input(): "Not issued"})
+            elif option == "l":
+                print("LEND BOOK")
+                print(d.items())
+                #dict()
+                #d = {}
+                #for dic in self.books:
+                    #d.update({dic: "Not issued"})
+                #print(d.items())
+                #for dic in self.books:
+                d.update({input("Write Name of book exactly from Book List"): input("Your Name")})
+                #print(d.items())
+                #if option=="D":
+                   # print(d.items())
+            elif option == "D":
+                print(d.items())
+APSLibrary=Library(["Ulysses","Don Quixote","One Hundred Years of Solitude","The Great Gatsby","Moby Dick","War and Peace","Hamlet"," The Odyssey","Madame Bovary",
+                    "The Divine Comedy","Lolita"],"APS LIBRARY")
+#APSLibrary.dict()
+APSLibrary.display()
